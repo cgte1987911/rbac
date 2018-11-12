@@ -1,9 +1,13 @@
-package com.ltf.Test;
+package com.ltf.test;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author dreamneverdie
+ *
+ */
 @Getter
 @Setter
 @ToString
