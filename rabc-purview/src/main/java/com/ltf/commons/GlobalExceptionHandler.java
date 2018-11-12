@@ -12,46 +12,58 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.util.Map;
 
+/**
+ * @author dreamneverdie
+ *
+ */
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ResponseBody
-    @ExceptionHandler(NoHandlerFoundException.class)
-    public Map<String, Object> handleException(NoHandlerFoundException e) {
-        System.out.println(111);
-        String msg ="404页面不存在";
+	/**
+	 * @param e	404异常
+	 * @return 返回json格式404不存在信息
+	 */
+	@ResponseBody
+	@ExceptionHandler(NoHandlerFoundException.class)
+	public Map<String, Object> handleException(NoHandlerFoundException e) {
+		log.info("111111");
+		String msg = "404页面不存在";
 
+		JsonData jsonData = JsonData.fail(msg);
+		return jsonData.toMap();
+	}
 
-        JsonData jsonData = JsonData.fail(msg);
-        return jsonData.toMap();
-    }
+	/**
+	 * @param e 校验bean类数据出错时候的信息
+	 * @return 返回json数据
+	 */
+	@ResponseBody
+	@ExceptionHandler(BindException.class)
+	public Map<String, Object> handleException(BindException e) {
 
+		BindingResult bindingResult = e.getBindingResult();
+		String errorMessage = "校验失败:";
+		for (FieldError fieldError : bindingResult.getFieldErrors()) {
+			log.error(fieldError.getDefaultMessage() + "\n");
+		}
+		JsonData jsonData = JsonData.fail(errorMessage);
+		return jsonData.toMap();
+	}
 
-
-
-    @ResponseBody
-    @ExceptionHandler(BindException.class)
-    public Map<String, Object> handleException(BindException e) {
-
-            BindingResult bindingResult = e.getBindingResult();
-            String errorMessage = "校验失败:";
-            for (FieldError fieldError : bindingResult.getFieldErrors()) {
-               log.error(fieldError.getDefaultMessage()+"\n");
-            }
-            JsonData jsonData = JsonData.fail(errorMessage);
-            return jsonData.toMap();
-    }
-
-    @ResponseBody
-    @ExceptionHandler(Exception.class)
-    public Map<String, Object> handleException(Exception e) {
-        System.out.println(e.getClass());
-        String msg = e.getMessage();
-        if (msg == null || msg.equals("")) {
-            msg = "服务器出错";
-        }
-        log.error("未知错误:----",e);
-        JsonData jsonData = JsonData.fail(msg);
-        return jsonData.toMap();
-    }
+	/**
+	 * @param e 没有其他异常时走这个默认异常
+	 * @return 返回服务器出错信息
+	 */
+	@ResponseBody
+	@ExceptionHandler(Exception.class)
+	public Map<String, Object> handleException(Exception e) {
+		log.info(e.getClass().toString());
+		String msg = e.getMessage();
+		if (msg == null || msg.equals("")) {
+			msg = "服务器出错";
+		}
+		log.error("未知错误:----", e);
+		JsonData jsonData = JsonData.fail(msg);
+		return jsonData.toMap();
+	}
 }

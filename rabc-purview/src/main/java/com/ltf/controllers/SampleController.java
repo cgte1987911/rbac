@@ -22,7 +22,7 @@ public class SampleController {
     @ResponseBody
     public String  echo(@PathVariable("message") String msg){
 
-        return "aaaaf123"+msg;
+        return "helloworld"+msg;
     }
 
     @RequestMapping(value = "/testfd" ,method=RequestMethod.POST)
