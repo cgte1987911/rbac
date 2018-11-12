@@ -1,0 +1,57 @@
+server:
+    port: 8080
+    tomcat:
+        uri-encoding: utf-8
+
+spring:
+    thymeleaf:
+        prefix: classpath:/templates/
+        mode: HTML
+        suffix: .html
+        cache: false
+    mvc:
+        static-path-pattern: /**
+    resources:
+        static-locations: classpath:/templates/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+    datasource:
+        druid:
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            url: jdbc:mysql://localhost:3306/ltf?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+            username: root
+            password:
+            # 连接池配置
+            initial-size: 5
+            min-idle: 5
+            max-wait: 1000
+            filters: stat,wall
+            filter:
+                stat:
+                    log-slow-sql: true
+                    slow-sql-millis: 2000
+            max-active: 20
+            web-stat-filter:
+                enabled: true
+                url-pattern: /*
+                exclusions: '*.gif,*.png,*.jpg,*.html,*.js,*.css,*.ico,/druid/*'
+
+            stat-view-servlet:
+                enabled: true
+                url-pattern: /druid/*
+                reset-enable: true
+                login-username: admin
+                login-password: admin
+                allow:
+                deny:
+
+mybatis:
+  #check-config-location: true
+  type-aliases-package: com.ltf.model
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+
+#pagehelper
+pagehelper:
+  helperDialect: oracle
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
