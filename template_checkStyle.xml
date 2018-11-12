@@ -162,8 +162,8 @@
         <!-- 检查只有private构造函数的类是否声明为final -->
         <module name="FinalClass"/>
         <!-- 检查工具类是否有putblic的构造器 -->
-        <module name="HideUtilityClassConstructor"/>
-        <!-- 检查接口是否仅定义类型 -->
+<!--         <module name="HideUtilityClassConstructor"/>
+ -->        <!-- 检查接口是否仅定义类型 -->
         <module name="InterfaceIsType"/>
         <!-- 检查类成员的可见度 检查类成员的可见性。只有static final 成员是public的 
         除非在本检查的protectedAllowed和packagedAllowed属性中进行了设置-->
@@ -185,7 +185,7 @@
         </module>
         <!-- 检查未被注释的main方法,排除以Appllication结尾命名的类 -->
         <module name="UncommentedMain">
-            <property name="excludedClasses" value=".*Application$"/>
+            <property name="excludedClasses" value=".*App$"/>
         </module>
         <!-- 禁止使用System.out.println -->
         <module name="Regexp">
