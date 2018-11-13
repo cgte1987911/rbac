@@ -6,7 +6,6 @@ import com.ltf.mybatis.services.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.xml.ws.ServiceMode;
 import java.util.List;
 
 /**
