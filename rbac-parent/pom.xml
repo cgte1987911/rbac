@@ -107,7 +107,9 @@
 					<source>${jdk.version}</source><!-- 源代码使用的开发版本 -->
 					<target>${jdk.version}</target><!-- 需要生成的目标class文件的编译版本 -->
 					<encoding>${project.build.sourceEncoding}</encoding>
+					<failOnMissingWebXml>false</failOnMissingWebXml>				
 				</configuration>
+				
 			</plugin>
 		</plugins>
 	</build>
