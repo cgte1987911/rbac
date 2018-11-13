@@ -12,12 +12,16 @@ import org.springframework.web.servlet.config.annotation.*;
 
 import java.util.List;
 
+/**
+ * @author dreamneverdie
+ *
+ */
 @EnableWebMvc
 @EnableAsync
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
     @Bean   //把我们的拦截器注入为bean
-    public HandlerInterceptor getMyInterceptor(){
+    public HandlerInterceptor getMyInterceptor() {
         return new ErrorInterceptor();
     }
 
