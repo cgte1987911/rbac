@@ -1,5 +1,4 @@
 package com.ltf.exception;
-
 import java.text.MessageFormat;
 
 /**
@@ -40,6 +39,6 @@ public class ParamException extends RuntimeException {
 
 	@Override
 	public String toString() {
-		return MessageFormat.format("{0}[{1}]", "生日", "格式错误");
+		return  MessageFormat.format("{0}[{1}]", "生日", "格式错误");
 	}
 }

@@ -9,13 +9,17 @@ import javax.annotation.Resource;
 import javax.xml.ws.ServiceMode;
 import java.util.List;
 
+/**
+ * @author dreamneverdie
+ *
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
     @Resource
     private UserDao userDao;
     @Override
-    public List<User> list(){
+	public List<User> list() {
         return this.userDao.findAll();
     }
 

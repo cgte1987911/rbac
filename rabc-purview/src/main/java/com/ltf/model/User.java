@@ -4,14 +4,18 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.util.Date;
 
+/**
+ * @author dreamneverdie
+ *
+ */
 public class User {
 
     @NotNull(message = "姓名不能为空")
-    public String name;
+    private String name;
 
     @NotNull(message = "生日不能为空")
     @Past(message = "生日必须是在此之前的时间")
-    public Date birthday;
+    private Date birthday;
     public String getName() {
         return name;
     }
