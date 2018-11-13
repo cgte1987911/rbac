@@ -34,8 +34,8 @@ public class SampleControllerTest {
 	private MockMvc mvc;
 
 	/**
-	 * @throws Exception
-	 *             fdsagd
+	 * @throws Exception	捕捉mock url请求时候的异常
+	 *          
 	 */
 	@Test
 	public void home() throws Exception {
@@ -47,12 +47,10 @@ public class SampleControllerTest {
 	/**
 	 * @throws Exception
 	 */
-	/**
-	 * @throws Exception
-	 */
+
 	@Test
 
-	public void json() throws Exception {
+	public void json()  {
 
 		// String json="{\"name\":\"puer\"}";
 		String json2 = "{\"place\":\"上海\"}";
