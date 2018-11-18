@@ -35,12 +35,14 @@
 					if(tools.hasClass(triangle,"triangle-expand")){
 						onlyChainColor();
 						var defaultSel=true;
-						tools.each(preChainLi,function(item){
-							var item=tools.$(item,".tree-title")[0];
+						
+							var items=tools.$(parentLi,".tree-title");
+							tools.each(items,function(item){
 							if(_this!=item&&tools.hasClass(item,"active")){
 								defaultSel=false;
 								
 							}
+
 
 						})
 						if(defaultSel){
