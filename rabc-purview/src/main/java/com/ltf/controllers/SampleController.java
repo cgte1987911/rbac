@@ -22,11 +22,21 @@ public class SampleController {
 	/**
 	 * @return 返回test页面
 	 */
-	@RequestMapping("/hello2")
+	@RequestMapping("/login")
 
 	public String home() {
 
-		return "test";
+		return "login";
+	}
+	
+	/**
+	 * @return 跳转后台欢迎页面
+	 */
+	@RequestMapping("/admin")
+
+	public String admin() {
+
+		return "welcome_admin";
 	}
 
 	/**

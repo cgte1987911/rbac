@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+<meta charset="UTF-8">
+<title>rbac_login</title>
+    
+
+<link rel="stylesheet" href="./assets/css/global.css"/>
+<link rel="stylesheet" href="./assets/css/login.css"/>
+</head>
+<body>
+
+
+
+<div id="header">
+    <div class="logo">
+        <a href="javascript:">rbac</a>
+    </div>
+</div>
+
+<div id="content">
+    <form id="login_form" class="css-form" style="width: 400px; margin: 0 auto;">
+        <div class="css-form-header">
+            <h1>管理员后台登录</h1>
+        </div>
+        <div class="css-form-row">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" class="css-width-150 ext-required">
+        </div>
+        <div class="css-form-row">
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" class="css-width-150 ext-required">
+        </div>
+        <div class="css-form-row">
+            <label for="captcha">验证码:</label>
+            <input type="text" id="captcha" name="captcha" class="css-width-50 ext-required">
+            <img id="captcha_img" src="./assets/imgs/captcha.jpg" title="刷新验证码" class="css-cursor-pointer ext-captcha">
+        </div>
+        <div class="css-form-footer css-text-center">
+            <button	id="sub-btn" type="button">登录</button>
+        </div>
+    </form>
+</div>
+
+
+
+<div id="footer">
+    <div id="copyright">
+        <span>版权所有 © 2018</span>
+    </div>
+    <div id="language">
+        <a href="#" data-value="zh_CN">中文</a>
+        <span>|</span>
+        <a href="#" data-value="en_US">English</a>
+    </div>
+</div>
+
+</body>
+<script src="./assets/js/tools.js"></script>
+<script src="./assets/js/login.js"></script>
+</html>
