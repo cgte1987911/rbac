@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.dreamneverdie</groupId>
-  <artifactId>rbac-parent</artifactId>
-  <version>1.0.0</version>
-  <packaging>pom</packaging>
+	<groupId>com.dreamneverdie</groupId>
+	<artifactId>rbac-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
 
-  <name>rbac-parent</name>
-  <url>http://www.dreamneverdie.com</url>
+	<name>rbac-parent</name>
+	<url>http://www.dreamneverdie.com</url>
 
-  <properties>
+	<properties>
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -60,7 +60,35 @@
 				<version>1.1.10</version>
 			</dependency>
 
+			<!-- validator -->
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>2.0.1.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>5.2.4.Final</version>
+			</dependency>
+			<!-- Jackson -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.datatype</groupId>
+				<artifactId>jackson-datatype-guava</artifactId>
+				<version>2.5.3</version>
+			</dependency>
 
+			<!-- tools -->
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.2</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.10</version>
+			</dependency>
 			<!-- mybatis -->
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
@@ -107,9 +135,9 @@
 					<source>${jdk.version}</source><!-- 源代码使用的开发版本 -->
 					<target>${jdk.version}</target><!-- 需要生成的目标class文件的编译版本 -->
 					<encoding>${project.build.sourceEncoding}</encoding>
-					<failOnMissingWebXml>false</failOnMissingWebXml>				
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
-				
+
 			</plugin>
 		</plugins>
 	</build>
