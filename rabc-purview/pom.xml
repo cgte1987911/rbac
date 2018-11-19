@@ -123,6 +123,15 @@
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 		</dependency>
+		<!-- jackson 类对象转换成json字符串，字符串转换成json格式类对象 -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+			</dependency>
 		<dependency>
 
 			<groupId>com.google.code.gson</groupId>
